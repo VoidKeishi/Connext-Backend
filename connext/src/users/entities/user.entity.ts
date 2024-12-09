@@ -1,7 +1,7 @@
 import { Conversation } from 'src/conversation/entities/conversation.entity';
 import { Friendship } from 'src/friends/entities/friendship.entity';
-import { GroupChat } from 'src/group-chat/entities/group-chat.entity';
-import { GroupMember } from 'src/group-chat/entities/group-member.entity';
+import { GroupChat } from 'src/groupChat/groupChat.entity';
+import { GroupMember } from 'src/groupMember/groupMember.entity';
 import { GroupMessage } from 'src/group-chat/entities/group-message.entity';
 import {
   Entity,
@@ -59,7 +59,7 @@ export class User {
   @OneToMany(() => Friendship, (friendship) => friendship.friend_user_id)
   friends: Friendship[];
 
-  @OneToMany(() => GroupChat, (groupchat) => groupchat.created_by)
+  @OneToMany(() => GroupChat, (groupchat) => groupchat.createdBy)
   groups: GroupChat[];
 
   @OneToMany(() => GroupMessage, (groupMessage) => groupMessage.sender_id)
